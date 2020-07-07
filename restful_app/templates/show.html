@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <title>Show Details</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1>TV Show # {{show.id}}</h1>
+        <h4>Title</h4>
+        <p>{{show.title}}</p>
+        <hr>
+        <h4>Network</h4>
+        <p>{{show.network}}</p>
+        <hr>
+        <h4>Release Date</h4>
+        <p>{{show.release_date|date:'SHORT_DATE_FORMAT'}}</p>
+        <hr>
+        <h4>Description</h4>
+        <p>{{show.description}}</p>
+        <hr>
+        <h4>Last Updated</h4>
+        <p>{{show.updated_at}}</p>
+        <hr>
+        <a href="/shows/{{ show.id }}/edit">Edit</a> | <a href="/shows/{{ show.id }}/delete">Delete</a>
+        <a href="/shows" class="btn btn-danger pull-right">Go Back</a>
+    </div>
+</body>
+
+</html>
